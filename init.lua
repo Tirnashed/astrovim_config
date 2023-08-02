@@ -1,3 +1,6 @@
+vim.cmd [[let &shell = '"C:\Program Files\Git\bin\bash.exe"']]
+vim.cmd [[let &shellcmdflag = '-s']]
+
 return {
   -- Configure AstroNvim updates
   updater = {
