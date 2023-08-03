@@ -4,8 +4,9 @@ return {
     event = "VeryLazy",
     name = "neoscopes",
     config = function()
-      -- require("neoscopes").add_start_up_scope()
-      require("neoscopes").setup {
+      local scopes = require "neoscopes"
+      scopes.add_startup_scope()
+      scopes.setup {
         scopes = {
           {
             name = "project 1",

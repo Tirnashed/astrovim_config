@@ -11,31 +11,6 @@ local sections = {
   s = { desc = get_icon("Session", 1, true) .. "Scope" },
 }
 
-local scopes = require "neoscopes"
-scopes.add_startup_scope()
-
-local search_dirs = scopes.get_current_dirs()
-local glob_pattern = {}
-
--- Helper functions to fetch the current scope and set `search_dirs`
-_G.find_files_s = function()
-  require("telescope.builtin").find_files {
-    search_dirs = search_dirs,
-  }
-end
-_G.live_grep_s = function()
-  require("telescope.builtin").live_grep {
-    search_dirs = search_dirs,
-    glob_pattern = glob_pattern,
-  }
-end
-_G.grep_string_s = function()
-  require("telescope.builtin").grep_string {
-    search_dirs = search_dirs,
-    glob_pattern = glob_pattern,
-  }
-end
-
 return {
   -- first key is the mode
   n = {
@@ -66,7 +41,31 @@ return {
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     ["<leader>s"] = sections.s,
-    ["<leader>ss"] = { function() require("neoscopes").select() end, desc = "Select Scope" },
+    ["<leader>ss"] = {
+      function()
+        require("neoscopes").select()
+        local glob_pattern = {}
+        -- Helper functions to fetch the current scope and set `search_dirs`
+        _G.find_files_s = function()
+          require("telescope.builtin").find_files {
+            search_dirs = require("neoscopes").get_current_dirs(),
+          }
+        end
+        _G.live_grep_s = function()
+          require("telescope.builtin").live_grep {
+            search_dirs = require("neoscopes").get_current_dirs(),
+            glob_pattern = glob_pattern,
+          }
+        end
+        _G.grep_string_s = function()
+          require("telescope.builtin").grep_string {
+            search_dirs = require("neoscopes").get_current_dirs(),
+            glob_pattern = glob_pattern,
+          }
+        end
+      end,
+      desc = "Select Scope",
+    },
     ["<leader>sg"] = { "<cmd>lua live_grep_s()<cr>", desc = "Live Grep in Scope" },
     ["<leader>sf"] = { "<cmd>lua find_files_s()<cr>", desc = "Find File in Scope" },
     ["<leader>sc"] = { "<cmd>lua grep_string_s()<cr>", desc = "Search Word under Cursor in Scope" },

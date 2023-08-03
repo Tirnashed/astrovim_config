@@ -20,7 +20,7 @@ return {
       opts.section.buttons.val = {
         opts.button("n", " " .. " New file", ":ene <BAR> startinsert <cr>"),
         opts.button("r", " " .. " Recent files", ":Telescope oldfiles <cr>"),
-        opts.button("d", " " .. " Set scope", [[:lua require("neoscopes").select()<cr>]]),
+        opts.button("d", " " .. " Set scope", "<leader>ss"),
         opts.button("f", " " .. " Find file", "<cmd>lua find_files_s()<cr>"),
         opts.button("g", " " .. " Find text", "<cmd>lua live_grep_s()<cr>"),
         opts.button("q", " " .. " Quit", ":qa<CR>"),
