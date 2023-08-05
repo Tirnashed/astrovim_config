@@ -72,6 +72,9 @@ return {
 
     ["<leader>f<CR>"] = { false },
     ["<leader><space>"] = { function() require("telescope.builtin").resume() end, desc = "Resume previous search" },
+
+    ["<leader>vv"] = { "<cmd>Neorg<cr>", desc = "Open Neorg" },
+    ["<leader>vd"] = { "<cmd>Neorg workspace notes<cr>", desc = "Set default workspace" },
   },
   t = {
     -- setting a mapping to false will disable it
