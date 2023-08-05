@@ -10,6 +10,7 @@ return {
       "python",
       "json",
       "latex",
+      "javascript",
     })
   end,
 }
