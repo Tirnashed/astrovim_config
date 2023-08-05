@@ -21,19 +21,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "catppuccin",
-
-  plugins = {
-    {
-      "catppuccin/nvim",
-      name = "catppuccin",
-      config = function()
-        require("catppuccin").setup {
-          flavour = "macchiato",
-        }
-      end,
-    },
-  },
+  colorscheme = "tokyonight-night",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
