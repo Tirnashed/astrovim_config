@@ -9,6 +9,7 @@ local get_icon = utils.get_icon
 
 local sections = {
   s = { desc = get_icon("Session", 1, true) .. "Scope" },
+  v = { desc = " " .. "Neorg" },
 }
 
 return {
@@ -73,6 +74,7 @@ return {
     ["<leader>f<CR>"] = { false },
     ["<leader><space>"] = { function() require("telescope.builtin").resume() end, desc = "Resume previous search" },
 
+    ["<leader>v"] = sections.v,
     ["<leader>vv"] = { "<cmd>Neorg<cr>", desc = "Open Neorg" },
     ["<leader>vd"] = { "<cmd>Neorg workspace notes<cr>", desc = "Open default workspace" },
   },
