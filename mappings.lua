@@ -9,7 +9,6 @@ local get_icon = utils.get_icon
 
 local sections = {
   s = { desc = get_icon("Session", 1, true) .. "Scope" },
-  v = { desc = " " .. "Neorg" },
 }
 
 return {
@@ -71,12 +70,32 @@ return {
     ["<leader>sf"] = { "<cmd>lua find_files_s()<cr>", desc = "Find File in Scope" },
     ["<leader>sc"] = { "<cmd>lua grep_string_s()<cr>", desc = "Search Word under Cursor in Scope" },
 
-    ["<leader>f<CR>"] = { false },
     ["<leader><space>"] = { function() require("telescope.builtin").resume() end, desc = "Resume previous search" },
 
-    ["<leader>v"] = sections.v,
-    ["<leader>vv"] = { "<cmd>Neorg<cr>", desc = "Open Neorg" },
-    ["<leader>vd"] = { "<cmd>Neorg workspace notes<cr>", desc = "Open default workspace" },
+    -- Disabled keys
+    ["<leader>f<CR>"] = { false },
+    ["<leader>fa"] = { false },
+    ["<leader>fb"] = { false },
+    ["<leader>fm"] = { false },
+    ["<leader>fn"] = { false },
+    ["<leader>fo"] = { false },
+    ["<leader>ft"] = { false },
+    ["<leader>fF"] = { false },
+    ["<leader>fW"] = { false },
+    ["<leader>f'"] = { false },
+
+    ["<leader>p"] = { false },
+    ["<leader>pA"] = { false },
+    ["<leader>pa"] = { false },
+    ["<leader>pi"] = { false },
+    ["<leader>pl"] = { false },
+    ["<leader>pM"] = { false },
+    ["<leader>pm"] = { false },
+    ["<leader>pS"] = { false },
+    ["<leader>ps"] = { false },
+    ["<leader>pu"] = { false },
+    ["<leader>pU"] = { false },
+    ["<leader>pv"] = { false },
   },
   t = {
     -- setting a mapping to false will disable it
