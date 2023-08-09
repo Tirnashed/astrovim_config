@@ -19,7 +19,7 @@ return {
       }
       opts.section.buttons.val = {
         opts.button("n", " " .. " New file", ":ene <BAR> startinsert <cr>"),
-        opts.button("r", " " .. " Recent files", ":Telescope oldfiles <cr>"),
+        -- opts.button("r", " " .. " Recent files", ":Telescope oldfiles <cr>"),
         -- opts.button("z", " " .. " Set scope", "<leader>ss"),
         opts.button("f", " " .. " Find file", "<cmd>lua require('telescope.builtin').find_files()<cr>"),
         opts.button("g", " " .. " Find text", "<cmd>lua require('telescope.builtin').live_grep()<cr>"),
