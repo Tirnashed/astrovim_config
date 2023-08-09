@@ -29,9 +29,6 @@ return {
     end,
   },
   {
-    { "mfussenegger/nvim-dap", enabled = true },
-  },
-  {
     "rebelot/heirline.nvim",
     opts = function(_, opts)
       local status = require "astronvim.utils.status"
@@ -97,6 +94,10 @@ return {
       return opts
     end,
   },
+  { "mfussenegger/nvim-dap", enabled = false },
+  { "nvim-telescope/telescope-fzf-native.nvim", enabled = false },
+  { "rcarriga/nvim-dap-ui", enabled = false },
+  { "Shatur/neovim-session-manager", enabled = false },
   -- You can disable default plugins as follows:
   -- { "max397574/better-escape.nvim", enabled = false },
   --
