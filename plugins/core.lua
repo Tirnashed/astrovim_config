@@ -98,6 +98,7 @@ return {
   { "nvim-telescope/telescope-fzf-native.nvim", enabled = false },
   { "rcarriga/nvim-dap-ui", enabled = false },
   { "Shatur/neovim-session-manager", enabled = false },
+  { "rcarriga/nvim-notify", enabled = false},
   -- You can disable default plugins as follows:
   -- { "max397574/better-escape.nvim", enabled = false },
   --
