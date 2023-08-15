@@ -49,18 +49,21 @@ return {
         _G.find_files_s = function()
           require("telescope.builtin").find_files {
             search_dirs = require("neoscopes").get_current_dirs(),
+            additional_args = { "-i" },
           }
         end
         _G.live_grep_s = function()
           require("telescope.builtin").live_grep {
             search_dirs = require("neoscopes").get_current_dirs(),
             glob_pattern = glob_pattern,
+            additional_args = { "-i" },
           }
         end
         _G.grep_string_s = function()
           require("telescope.builtin").grep_string {
             search_dirs = require("neoscopes").get_current_dirs(),
             glob_pattern = glob_pattern,
+            additional_args = { "-i" },
           }
         end
       end,
