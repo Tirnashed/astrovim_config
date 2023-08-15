@@ -9,7 +9,6 @@ local get_icon = utils.get_icon
 
 local sections = {
   s = { desc = get_icon("Session", 1, true) .. "Scope" },
-  p = { desc = get_icon("Bookmarks", 1, true) .. "Harpoon" },
 }
 
 return {
@@ -73,10 +72,6 @@ return {
 
     ["<leader><space>"] = { function() require("telescope.builtin").resume() end, desc = "Resume previous search" },
 
-    ["<leader>p"] = sections.p,
-    ["<leader>pp"] = { function() require("harpoon.ui").toggle_quick_menu() end, desc = "Quick Menu" },
-    ["<leader>pa"] = { function() require("harpoon.mark").add_file() end, desc = "Add File" },
-
     -- Disabled keys
     ["<leader>f<CR>"] = { false },
     ["<leader>fa"] = { false },
@@ -89,9 +84,9 @@ return {
     ["<leader>fW"] = { false },
     ["<leader>f'"] = { false },
 
-    -- ["<leader>p"] = { false },
+    ["<leader>p"] = { false },
     ["<leader>pA"] = { false },
-    -- ["<leader>pa"] = { false },
+    ["<leader>pa"] = { false },
     ["<leader>pi"] = { false },
     ["<leader>pl"] = { false },
     ["<leader>pM"] = { false },
