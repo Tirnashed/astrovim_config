@@ -35,4 +35,21 @@ return {
       { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
     },
   },
+  {
+    "nvim-neorg/neorg",
+    init = function()
+      require('neorg').setup {
+        load = {
+          ["core.defaults"] = {},
+          ["core.dirman"] = {
+            config = {
+              workspaces = {
+                home = "~/notes/home",
+              }
+            }
+          }
+        }
+      }
+    end,
+  },
 }
