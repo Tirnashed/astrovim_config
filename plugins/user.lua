@@ -37,18 +37,22 @@ return {
   },
   {
     "nvim-neorg/neorg",
+    build = ":Neorg sync-parsers",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    event = "VeryLazy",
     init = function()
-      require('neorg').setup {
+      require("neorg").setup {
         load = {
           ["core.defaults"] = {},
+          ["core.concealer"] = {},
           ["core.dirman"] = {
             config = {
               workspaces = {
                 home = "~/notes/home",
-              }
-            }
-          }
-        }
+              },
+            },
+          },
+        },
       }
     end,
   },

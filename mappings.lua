@@ -9,6 +9,7 @@ local get_icon = utils.get_icon
 
 local sections = {
   s = { desc = get_icon("Session", 1, true) .. "Scope" },
+  w = { desc = get_icon("Session", 1, true) .. "Neorg" },
 }
 
 return {
@@ -37,7 +38,7 @@ return {
     },
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
-    ["<leader>b"] = { name = "Buffers" },
+    -- ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     ["<leader>s"] = sections.s,
@@ -72,6 +73,15 @@ return {
     ["<leader>sg"] = { "<cmd>lua live_grep_s()<cr>", desc = "Live Grep in Scope" },
     ["<leader>sf"] = { "<cmd>lua find_files_s()<cr>", desc = "Find File in Scope" },
     ["<leader>sc"] = { "<cmd>lua grep_string_s()<cr>", desc = "Search Word under Cursor in Scope" },
+
+    ["<leader>w"] = sections.w,
+    ["<leader>ww"] = { "<cmd>Neorg workspace home<cr>", desc = "Go to home workspace" },
+    ["<leader>wh"] = { "<cmd>Neorg workspace home<cr>", desc = "Go to home workspace" },
+    ["<leader>wt"] = { "<cmd>Neorg toggle-concealer<cr>", desc = "Toggle concealer" },
+    ["<leader>w0"] = { "<cmd>set conceallevel=0<cr>", desc = "Set conceal level 0" },
+    ["<leader>w1"] = { "<cmd>set conceallevel=1<cr>", desc = "Set conceal level 1" },
+    ["<leader>w2"] = { "<cmd>set conceallevel=2<cr>", desc = "Set conceal level 2" },
+    ["<leader>w3"] = { "<cmd>set conceallevel=3<cr>", desc = "Set conceal level 3" },
 
     ["<leader><space>"] = { function() require("telescope.builtin").resume() end, desc = "Resume previous search" },
 
