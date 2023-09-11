@@ -78,4 +78,33 @@ return {
       },
     },
   },
+  {
+    "nvim-neorg/neorg",
+    build = ":Neorg sync-parsers",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    event = "VeryLazy",
+    config = function()
+      require("neorg").setup {
+        load = {
+          ["core.defaults"] = {},
+          ["core.concealer"] = {},
+          ["core.dirman"] = {
+            config = {
+              workspaces = {
+                home = "~/notes/home",
+              },
+            },
+          },
+        },
+      }
+    end,
+    keys = {
+      { "<leader>wh", mode = { "n" }, "<cmd>Neorg workspace home<cr>", desc = "Go to home workspace" },
+      { "<leader>wt", mode = { "n" }, "<cmd>Neorg toggle-concealer<cr>", desc = "Toggle concealer" },
+      { "<leader>w0", mode = { "n" }, "<cmd>set conceallevel=0<cr>", desc = "Set conceal level 0" },
+      { "<leader>w1", mode = { "n" }, "<cmd>set conceallevel=1<cr>", desc = "Set conceal level 1" },
+      { "<leader>w2", mode = { "n" }, "<cmd>set conceallevel=2<cr>", desc = "Set conceal level 2" },
+      { "<leader>w3", mode = { "n" }, "<cmd>set conceallevel=3<cr>", desc = "Set conceal level 3" },
+    },
+  },
 }
